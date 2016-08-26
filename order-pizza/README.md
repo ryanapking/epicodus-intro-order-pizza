@@ -11,7 +11,7 @@ _The webpage allows the user to customize a pizza, including toppings and size, 
 ## Setup/Installation Requirements
 
 * _Open index.html in a web browser_
-* _Can be accessed on GitHub Pages add link here_
+* _Can be accessed on [GitHub Pages](https://ryanapking.github.io/order-pizza/)_
 
 
 _Application tested in Chrome._
@@ -20,21 +20,19 @@ _Application tested in Chrome._
 
 _Base price is set according to pizza size_
 * _Example Input: "Large"_
-* _Example Output: "$14.00"_
+* _Example Output: 14_
 
 _Individual toppings price is set according to pizza size_
 * _Example Input: "Medium"_
-* _Example Output: "$1.50"_
+* _Example Output: 1.5_
 
 _Total toppings price is set by multiplying number of toppings by individual topping price_
-* _Example Input: "pepperonis, anchovies"_
-* _Example Output: "$3.00"_
+* _Example Input: "pepperonis" "anchovies"_
+* _Example Output: 3_
 
 _Total pizza price is set by adding base price to total topping price_
-* _Example Input: "$14.00" "$2.00"_
-* _Example Output: "$16.00"_
-
-
+* _Example Input: 14, 2_
+* _Example Output: 16_
 
 ## Support and contact details
 
