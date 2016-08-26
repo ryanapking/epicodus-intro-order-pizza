@@ -38,3 +38,8 @@ Pizza.prototype.changeSize = function(newSize) {
 Pizza.prototype.getTotalPrice = function() {
   return this.totalPizzaPrice;
 };
+
+// User interface logic
+$(document).ready(function() {
+  
+});
