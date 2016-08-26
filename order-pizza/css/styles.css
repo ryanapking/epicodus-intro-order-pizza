@@ -4,3 +4,6 @@
 .initiallyHidden {
   display: none;
 }
+.clickable:hover {
+  cursor: pointer;
+}

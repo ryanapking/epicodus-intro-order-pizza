@@ -180,13 +180,28 @@ $(document).ready(function() {
   function updateCartDisplay() {
     var cartTotal = 0;
     if (pizzaCart.length !== 0) {
-  $("#emptyCart").hide();
+      $("#emptyCart").hide();
     } else {
       $("#emptyCart").show();
     }
     $("#cart").text("");
-    pizzaCart.forEach(function(pizza) {
-      $("#cart").append("<p class='right'>" + pizza.size + " Pizza: $" + pizza.totalPizzaPrice.toFixed(2) + "</p>");
+    pizzaCart.forEach(function(pizza, index) {
+      $("#cart").append("<p class='right clickable'>" + pizza.size + " Pizza: $" + pizza.totalPizzaPrice.toFixed(2) + "</p>");
+      $("#cart p").last().click(function() {
+        $(".cartItem" + index).toggle();
+      });
+      $("#cart").append("<p class='right initiallyHidden cartItem" + index + "'>Toppings: </p>");
+      if (pizza.toppings.length === 0) {
+        $(".cartItem" + index).append("none");
+      } else {
+        pizza.toppings.forEach(function(topping, toppingIndex) {
+          if (toppingIndex !== 0) {
+            $(".cartItem" + index).append(", " + topping);
+          } else {
+            $(".cartItem" + index).append(topping);
+          }
+        })
+      }
       cartTotal += pizza.totalPizzaPrice;
     });
     $("#cartTotal").text(cartTotal.toFixed(2));
