@@ -35,4 +35,6 @@ Pizza.prototype.changeSize = function(newSize) {
   this.setTotalPizzaPrice();
 };
 
-// Pizza.prototype.
+Pizza.prototype.getTotalPrice = function() {
+  return this.totalPizzaPrice;
+};
