@@ -41,11 +41,24 @@ Pizza.prototype.getTotalPrice = function() {
 
 // User interface logic
 $(document).ready(function() {
+  var pizzaCart = [];
   var currentPizza = new Pizza();
   updatePriceDisplays();
   $("#sizeForm input[type=radio]").change(function() {
     currentPizza.changeSize($(this).val());
     updatePriceDisplays();
+  });
+  $("#addPizzaBtn").click(function() {
+    pizzaCart.push(currentPizza);
+    currentPizza = new Pizza();
+    updatePriceDisplays();
+    resetToppingDisplays();
+    updateCartDisplay();
+  });
+  $("#startOverBtn").click(function() {
+    currentPizza = new Pizza();
+    updatePriceDisplays();
+    resetToppingDisplays();
   });
   $("#topping1Btn").click(function() {
     $("#topping1").show();
@@ -163,5 +176,39 @@ $(document).ready(function() {
     $("#basePrice").text(currentPizza.basePrice.toFixed(2));
     $(".toppingPrice").text(currentPizza.individualToppingPrice.toFixed(2));
     $("#totalPrice").text(currentPizza.totalPizzaPrice.toFixed(2));
+  };
+  function updateCartDisplay() {
+    var cartTotal = 0;
+    if (pizzaCart.length !== 0) {
+  $("#emptyCart").hide();
+    } else {
+      $("#emptyCart").show();
+    }
+    $("#cart").text("");
+    pizzaCart.forEach(function(pizza) {
+      $("#cart").append("<p class='right'>" + pizza.size + " Pizza: $" + pizza.totalPizzaPrice.toFixed(2) + "</p>");
+      cartTotal += pizza.totalPizzaPrice;
+    });
+    $("#cartTotal").text(cartTotal.toFixed(2));
+  }
+  function resetToppingDisplays() {
+    $("#topping1").hide();
+    $("#topping2").hide();
+    $("#topping3").hide();
+    $("#topping4").hide();
+    $("#topping5").hide();
+    $("#topping6").hide();
+    $("#topping7").hide();
+    $("#topping8").hide();
+    $("#topping9").hide();
+    $("#topping1Btn").show();
+    $("#topping2Btn").show();
+    $("#topping3Btn").show();
+    $("#topping4Btn").show();
+    $("#topping5Btn").show();
+    $("#topping6Btn").show();
+    $("#topping7Btn").show();
+    $("#topping8Btn").show();
+    $("#topping9Btn").show();
   };
 });

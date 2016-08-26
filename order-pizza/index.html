@@ -33,7 +33,7 @@
         </div>
 
         <div class="col col-sm-4 col-sm-pull-right">
-          <h4>Your Pizza:</h4>
+          <h4>Your Pizza:<small><br>Click on a topping to remove it</small></h4>
           <p class="right"><span id="pizzaSize" class="right"></span> Pizza: $<span id="basePrice"></span></p>
           <p id="topping1" class="right initiallyHidden">Green Pepper: $<span class="toppingPrice"></span></p>
           <p id="topping2" class="right initiallyHidden">Onion: $<span class="toppingPrice"></span></p>
@@ -47,6 +47,15 @@
           <p id="noToppings" class="right initiallyHidden">No Toppings: $0.00</p>
           <hr>
           <p class="right">Total Price: $<span id="totalPrice"></span></p>
+          <button id="addPizzaBtn" class="btn btn-success">Add to Cart</button>
+          <button id="startOverBtn" class="btn btn-danger">Start Over</button>
+          <br><br>
+          <h4>Your Cart:</h4>
+          <div id="cart" class="right">
+          </div>
+          <p id="emptyCart" class="right">Cart Empty</p>
+          <hr>
+          <p class="right">Total Price: $<span id="cartTotal">0.00</span></p>
         </div>
       </div>
     </div>
