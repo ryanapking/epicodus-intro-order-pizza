@@ -1,46 +1,40 @@
 // Back end logic
 function Pizza() {
-  this.size = "s";
+  this.size = "Small";
   this.toppings = [];
   this.basePrice = 10;
   this.individualToppingPrice = 1;
   this.totalPizzaPrice = 10;
 };
-
 Pizza.prototype.setBasePrices = function() {
-  if (this.size === "s") {
+  if (this.size === "Small") {
     this.basePrice = 10;
     this.individualToppingPrice = 1;
-  } else if (this.size === "m") {
+  } else if (this.size === "Medium") {
     this.basePrice = 12;
     this.individualToppingPrice = 1.5;
-  } else if (this.size === "l") {
+  } else if (this.size === "Large") {
     this.basePrice = 14;
     this.individualToppingPrice = 2;
   }
 };
-
 Pizza.prototype.setTotalPizzaPrice = function() {
   this.totalPizzaPrice = this.basePrice + (this.toppings.length * this.individualToppingPrice);
 };
-
 Pizza.prototype.addTopping = function(topping) {
   this.toppings.push(topping);
   this.setTotalPizzaPrice();
 };
-
 Pizza.prototype.removeTopping = function(topping) {
   var index = this.toppings.indexOf(topping);
   this.toppings.splice(index, 1);
   this.setTotalPizzaPrice();
 };
-
 Pizza.prototype.changeSize = function(newSize) {
   this.size = newSize;
   this.setBasePrices();
   this.setTotalPizzaPrice();
 };
-
 Pizza.prototype.getTotalPrice = function() {
   return this.totalPizzaPrice;
 };
@@ -48,10 +42,11 @@ Pizza.prototype.getTotalPrice = function() {
 // User interface logic
 $(document).ready(function() {
   var currentPizza = new Pizza();
-  $(".toppingPrice").text(currentPizza.individualToppingPrice.toFixed(2));
-  $("#totalPrice").text(currentPizza.totalPizzaPrice.toFixed(2));
-  $("#basePrice").text(currentPizza.basePrice.toFixed(2));
-
+  updatePriceDisplays();
+  $("#sizeForm input[type=radio]").change(function() {
+    currentPizza.changeSize($(this).val());
+    updatePriceDisplays();
+  });
   $("#topping1Btn").click(function() {
     $("#topping1").show();
     $("#topping1Btn").hide();
@@ -160,8 +155,11 @@ $(document).ready(function() {
     currentPizza.removeTopping("Sausage");
     updatePriceDisplays();
   });
-
   function updatePriceDisplays() {
+    if (currentPizza.toppings.length === 0) {
+      $("#noToppings").show();
+    } else $("#noToppings").hide();
+    $("#pizzaSize").text(currentPizza.size);
     $("#basePrice").text(currentPizza.basePrice.toFixed(2));
     $(".toppingPrice").text(currentPizza.individualToppingPrice.toFixed(2));
     $("#totalPrice").text(currentPizza.totalPizzaPrice.toFixed(2));
