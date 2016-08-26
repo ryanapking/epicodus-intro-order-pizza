@@ -5,9 +5,37 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.1.0.js"></script>
     <script src="js/scripts.js"></script>
-    <title></title>
+    <title>Order Pizza</title>
   </head>
   <body>
+    <div class="container">
+      <h1>Order Pizza</h1>
+      <div class="row">
+        <div class="col col-sm-3">
+          <h4>Add Toppings:</h4>
+          <button id="topping1Btn" class="btn btn-success form-control">Green Pepper</button>
+          <button id="topping2Btn" class="btn btn-success form-control">Onion</button>
+          <button id="topping3Btn" class="btn btn-success form-control">Mushroom</button>
+          <button id="topping4Btn" class="btn btn-success form-control">Pineapple</button>
+          <button id="topping5Btn" class="btn btn-warning form-control">Extra cheese</button>
+          <button id="topping6Btn" class="btn btn-warning form-control">Anchovies</button>
+          <button id="topping7Btn" class="btn btn-danger form-control">Pepperoni</button>
+          <button id="topping8Btn" class="btn btn-danger form-control">Bacon</button>
+          <button id="topping9Btn" class="btn btn-danger form-control">Sausage</button>
+        </div>
+        <div class="col col-sm-4 col-sm-offset-1">
+          <form id="sizeForm">
+            <h4>Select Size:</h4>
+            <input type="radio" name="size" value="s" checked> Small<br>
+            <input type="radio" name="size" value="m"> Medium<br>
+            <input type="radio" name="size" value="l"> Large<br>
+          </form>
+        </div>
 
+        <div class="col col-sm-4 col-sm-pull-right">
+          <h4>Your Pizza:</h4>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
