@@ -1,37 +1,51 @@
-# _{Application Name}_
+# _Order Pizza_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _Webpage that allows user to customize a pizza and shows its price, 8/26/2016_
 
-#### By _**{List of contributors}**_
+#### By _**Ryan Apking**_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_The webpage allows the user to customize a pizza, including toppings and size, and then calculates the pizza's price based on their selections._
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
+* _Open index.html in a web browser_
+* _Can be accessed on GitHub Pages add link here_
 
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
 
-## Known Bugs
+_Application tested in Chrome._
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+## Specifications
+
+_Base price is set according to pizza size_
+* _Example Input: "Large"_
+* _Example Output: "$14.00"_
+
+_Individual toppings price is set according to pizza size_
+* _Example Input: "Medium"_
+* _Example Output: "$1.50"_
+
+_Total toppings price is set by multiplying number of toppings by individual topping price_
+* _Example Input: "pepperonis, anchovies"_
+* _Example Output: "$3.00"_
+
+_Total pizza price is set by adding base price to total topping price_
+* _Example Input: "$14.00" "$2.00"_
+* _Example Output: "$16.00"_
+
+
 
 ## Support and contact details
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+_Contact Ryan Apking._
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+_Application written in Javascript, using Bootstrap and jQuery._
 
 ### License
 
-*{Determine the license under which this application can be used.  See below for more details on licensing.}*
+*GPL*
 
-Copyright (c) 2016 **_{List of contributors or company name}_**
+Copyright (c) 2016 **_Ryan Apking_**
