@@ -1,3 +1,6 @@
 .right {
   text-align: right;
 }
+.initiallyHidden {
+  display: none;
+}

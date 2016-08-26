@@ -41,5 +41,54 @@ Pizza.prototype.getTotalPrice = function() {
 
 // User interface logic
 $(document).ready(function() {
-  
+  var currentPizza = new Pizza();
+  $(".toppingPrice").text(currentPizza.individualToppingPrice.toFixed(2));
+  $("#totalPrice").text(currentPizza.totalPizzaPrice.toFixed(2));
+  $("#basePrice").text(currentPizza.basePrice.toFixed(2));
+
+  $("#topping1Btn").click(function() {
+    $("#topping1").show();
+    $("#topping1Btn").hide();
+    currentPizza.addTopping("Green Pepper");
+  });
+  $("#topping2Btn").click(function() {
+    $("#topping2").show();
+    $("#topping2Btn").hide();
+    currentPizza.addTopping("Onion");
+  });
+  $("#topping3Btn").click(function() {
+    $("#topping3").show();
+    $("#topping3Btn").hide();
+    currentPizza.addTopping("Mushroom");
+  });
+  $("#topping4Btn").click(function() {
+    $("#topping4").show();
+    $("#topping4Btn").hide();
+    currentPizza.addTopping("Pineapple");
+  });
+  $("#topping5Btn").click(function() {
+    $("#topping5").show();
+    $("#topping5Btn").hide();
+    currentPizza.addTopping("Extra Cheese");
+  });
+  $("#topping6Btn").click(function() {
+    $("#topping6").show();
+    $("#topping6Btn").hide();
+    currentPizza.addTopping("Anchovies");
+  });
+  $("#topping7Btn").click(function() {
+    $("#topping7").show();
+    $("#topping7Btn").hide();
+    currentPizza.addTopping("Pepperoni");
+  });
+  $("#topping8Btn").click(function() {
+    $("#topping8").show();
+    $("#topping8Btn").hide();
+    currentPizza.addTopping("Bacon");
+  });
+  $("#topping9Btn").click(function() {
+    $("#topping9").show();
+    $("#topping9Btn").hide();
+    currentPizza.addTopping("Sausage");
+  });
 });
