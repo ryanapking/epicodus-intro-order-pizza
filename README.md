@@ -11,7 +11,7 @@ _The webpage allows the user to customize a pizza, including toppings and size, 
 ## Setup/Installation Requirements
 
 * _Open index.html in a web browser_
-* _Can be accessed on [GitHub Pages](https://ryanapking.github.io/order-pizza/)_
+* _Can be accessed on [GitHub Pages](https://ryanapking.github.io/epicodus-intro-order-pizza/)_
 
 
 _Application tested in Chrome._
